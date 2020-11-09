@@ -26,3 +26,10 @@ Los errores iniciales al compilar son:
     The terminal process terminated with exit code: 1
     
     
+He actualizado el código y he probado con otras opciones del compilador. Por ejemplo, al compilar con la opción "-ansi" me saltan warnings como que el comentario de línea // no está permitido.
+> Executing task: /usr/bin/gcc -g /Users/pablounileon/Documents/DPS/hola.c -o /Users/pablounileon/Documents/DPS/hola -Wall -ansi <
+/Users/pablounileon/Documents/DPS/hola.c:29:9: warning: // comments are not allowed in this language [-Wcomment]
+        //return 1;
+        ^
+En el caso anterior es por el error que la función gets_example_func es tipo void y por lo tanto no debería devolver un valor.
+
