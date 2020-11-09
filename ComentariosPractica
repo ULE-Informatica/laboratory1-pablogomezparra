@@ -1,0 +1,35 @@
+Estoy realizando la práctica. Nada mas cargar el código me da errores y no compila. Tampoco he usado nunca Github, así que no sé muy bien si cada vez que "comiteo" algo le llega un aviso o alerta.
+
+Los errores iniciales al compilar son:
+    > Executing task: /usr/bin/gcc -g /Users/pablounileon/Documents/DPS/hola.c -o /Users/pablounileon/Documents/DPS/hola -Wall <
+
+    /Users/pablounileon/Documents/DPS/hola.c:22:19: warning: missing terminating '"' character [-Winvalid-pp-token]
+    const char* s1 = R"foo(
+                      ^
+    /Users/pablounileon/Documents/DPS/hola.c:22:18: error: use of undeclared identifier 'R'
+    const char* s1 = R"foo(
+                     ^
+    /Users/pablounileon/Documents/DPS/hola.c:22:19: error: expected ';' after top level declarator
+    const char* s1 = R"foo(
+                      ^
+                      ;
+    /Users/pablounileon/Documents/DPS/hola.c:25:5: warning: missing terminating '"' character [-Winvalid-pp-token]
+    )foo";
+        ^
+    /Users/pablounileon/Documents/DPS/hola.c:32:9: error: void function 'gets_example_func' should not return a value [-Wreturn-type]
+            return 1;
+            ^      ~
+    /Users/pablounileon/Documents/DPS/hola.c:94:11: error: use of undeclared identifier 's2'
+        puts (s2);
+              ^
+    2 warnings and 4 errors generated.
+    The terminal process terminated with exit code: 1
+    
+    
+He actualizado el código y he probado con otras opciones del compilador. Por ejemplo, al compilar con la opción "-ansi" me saltan warnings como que el comentario de línea // no está permitido.
+> Executing task: /usr/bin/gcc -g /Users/pablounileon/Documents/DPS/hola.c -o /Users/pablounileon/Documents/DPS/hola -Wall -ansi <
+/Users/pablounileon/Documents/DPS/hola.c:29:9: warning: // comments are not allowed in this language [-Wcomment]
+        //return 1;
+        ^
+En el caso anterior es por el error que la función gets_example_func es tipo void y por lo tanto no debería devolver un valor.
+
